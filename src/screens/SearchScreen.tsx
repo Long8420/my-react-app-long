@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Dimensions,
-  StatusBar,
-  FlatList,
-} from 'react-native';
+import {View, StyleSheet, Dimensions, StatusBar, FlatList} from 'react-native';
 import {COLORS, SPACING} from '../theme/theme';
 import {baseImagePath, searchMovies} from '../api/apicalls';
 import InputHeader from '../components/InputHeader';
