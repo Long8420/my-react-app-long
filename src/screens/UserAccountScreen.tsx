@@ -30,7 +30,7 @@ const UserAccountScreen = ({navigation}: any) => {
         <SettingProfile icon="setting" title="Setting" />
         <SettingProfile icon="dollar" title="Offers & Referrails" />
         <SettingProfile icon="info" title="About" />
-        <SettingProfile icon="logout" title="LogOut" />
+        <SettingProfile icon="logout" title="LogOut" onPress={login} />
       </View>
     </View>
   );

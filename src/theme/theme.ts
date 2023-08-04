@@ -29,6 +29,7 @@ export const SPACING: Spacing = {
   space_36: 36,
 };
 interface Color {
+  OrangeColor: any | ColorValue | undefined;
   Black: string;
   BlackRGB10: string;
   Orange: string;
