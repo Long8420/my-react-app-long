@@ -158,7 +158,6 @@ const SeatBookingScreen = ({navigation, route}: any) => {
             </View>
           </LinearGradient>
         </ImageBackground>
-        <Text style={styles.screenText}></Text>
       </View>
       <View style={styles.seatContainer}>
         <View style={styles.containerGap20}>

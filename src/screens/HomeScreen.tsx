@@ -19,7 +19,6 @@ import InputHeader from '../components/InputHeader';
 import CategoryHeader from '../components/CategoryHeader';
 import SubMovieCard from '../components/SubMovieCard';
 import MovieCard from '../components/MovieCard';
-// import MovieCard from '../components/MovieCard';
 
 const {width} = Dimensions.get('window');
 
