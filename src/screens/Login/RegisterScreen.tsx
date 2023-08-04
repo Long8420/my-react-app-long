@@ -1,12 +1,18 @@
 import {useState} from 'react';
-import {Text, View, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import InputAuth from '../../components/InputAuth';
 import {COLORS, FONTSIZE, SPACING, FONTFAMILY} from '../../theme/theme';
 import {regexEmail} from '../../utils';
 import {LoginStyles} from './Login.Style';
 import {ErrorMessage} from './Message';
 
-const LoginScreen = ({navigation}: any) => {
+const RegisterScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [isErrorEmail, setErrorEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,17 +30,14 @@ const LoginScreen = ({navigation}: any) => {
       setErrorEmail('');
     }
   };
-  const register = () => {
-    navigation.navigate('Register');
-  };
-  const home = () => {
-    navigation.navigate('Tab');
+  const login = () => {
+    navigation.navigate('Login');
   };
   return (
     <View style={styles.container}>
       <StatusBar hidden />
       <View style={styles.headerLogin}>
-        <Text style={styles.title}>LOGIN</Text>
+        <Text style={styles.title}>REGISTER</Text>
       </View>
       <View style={styles.inputAuth}>
         <InputAuth
@@ -51,22 +54,23 @@ const LoginScreen = ({navigation}: any) => {
           value={password}
           styles={LoginStyles.inputView}
         />
+        <InputAuth
+          onChange={onChangePassword}
+          secure={true}
+          name="Confirm Password"
+          value={password}
+          styles={LoginStyles.inputView}
+        />
       </View>
-      <TouchableOpacity style={styles.buttonContanier} onPress={home}>
-        <Text style={styles.textLogin}> Login</Text>
-      </TouchableOpacity>
-      <View style={styles.difLogin}>
-        <TouchableOpacity>
-          <Text style={styles.textDfLogin}>Forgot Password </Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.textDfLogin}>Sign up for Facebook </Text>
+      <View style={{marginTop: SPACING.space_36 * 4}}>
+        <TouchableOpacity style={styles.buttonContanier}>
+          <Text style={styles.textLogin}> Register</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.buttonRegister}>
-        <Text style={{color: COLORS.White}}> No account ? </Text>
-        <TouchableOpacity onPress={register}>
-          <Text style={styles.textRegister}> Register</Text>
+        <Text style={{color: COLORS.White}}>Already have an account?</Text>
+        <TouchableOpacity onPress={login}>
+          <Text style={styles.textRegister}> Log in</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_8 * 2,
   },
   buttonRegister: {
-    marginTop: SPACING.space_36 * 5,
+    marginTop: SPACING.space_36 * 4,
     alignSelf: 'center',
     display: 'flex',
     flexDirection: 'row',
@@ -129,4 +133,4 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_16,
   },
 });
-export default LoginScreen;
+export default RegisterScreen;
